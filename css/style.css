@@ -24,8 +24,8 @@
 ---------------------------------------------------------------------------*/
 :root {
 
-	--primary-color: #115f86;			/*テンプレートのメインまたはアクセントとなる色*/
-	--primary-inverse-color: #66af9c;		/*primary-colorの対として使う色*/
+	--primary-color: #1b7eca;			/*テンプレートのメインまたはアクセントとなる色*/
+	--primary-inverse-color: #21EDBA;		/*primary-colorの対として使う色*/
 
 	--primary-color-rgb: 17,95,134;	/*primary-colorをrgb数値にしたもの。個別に透明度を調整して使い回す為のものです。*/
 
@@ -110,11 +110,13 @@ video {max-width: 100%;}*/
 /*iframeタグ*/
 iframe {width: 100%;}
 
-/*sectionが続く場合*/
-section + section {
-	margin-top: 8vw;	/*sectionの上に空けるスペース*/
-}
 
+/*sectionが続く場合*/
+/*
+section + section {
+	margin-top: 8vw;	/*sectionの上に空けるスペース
+}
+*/
 
 /*リンク（全般）設定
 ---------------------------------------------------------------------------*/
@@ -153,7 +155,7 @@ a:hover {
 ---------------------------------------------------------------------------*/
 #contents {
 	padding: 6vw var(--global-space);	/*上下、左右へのボックス内の余白。左右はcss冒頭で指定しているglobal-spaceを読み込みます*/
-	background-color: #00a98f;
+	background-color: #21EDBA;
 }
 
 
@@ -185,7 +187,7 @@ header h1 {
 	position: relative;
 	display: flex;			/*直接の子要素を横並びにする。この場合、ロゴとメニューブロックが対象。*/
 	align-items: center;	/*天地中央に配置*/
-	background: #00a98f;		/*背景色*/
+	background: #21EDBA;		/*背景色*/
 	color: white;
 }
 
@@ -205,12 +207,20 @@ header h1 {
 	margin: 30px;
 }
 
-.bg-white {
-	background-color: #fff;
+.store-links {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
 
-.bg-green {
-	background-color: #00a98f;
+.store-links a {
+	margin: 10px;
+	display: block; 
+}
+
+.store-links img {
+	width: 150px; 
+	height: 50px;
 }
 
 .text-content {
@@ -219,12 +229,19 @@ header h1 {
 }
 
 .text-content h1 {
-	color: #115f86;
+	color: #1b7eca;
     font-size: 40px;
     line-height: 1.4;
     margin-bottom: 20px;
 	font-weight: bold;  
 }
+
+.text-content h2 {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
 
 .text-content span{
 	font-size: 30px; 
@@ -232,16 +249,14 @@ header h1 {
 	font-weight: bold; 
 }
 
-
 .text-content p {
     font-size: 20px;
-    margin-bottom: 40px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 15px 30px;
-    background-color: #00a98f;
+    padding: 5px 5px;
+    background-color: black;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -251,6 +266,26 @@ header h1 {
 .image-content {
     flex: 1;
     text-align: center;
+}
+
+.logo-img{
+    flex: 1;
+	margin:0 auto;
+	height: 150px;
+	width: 150px;
+}
+
+.about-content p {
+	position: relative;
+	text-align: center;		
+	margin: 0 0 2rem;		
+	font-size: 30px;		/*文字サイズ*/
+	font-weight: 500;		/*文字の太さ。100から900まで指定可能。*/
+	letter-spacing: 0.1em;	
+}
+.about-content span {
+	font-weight: bold;
+	color: var(--primary-color)
 }
 
 .image-content img {
@@ -266,18 +301,35 @@ header h1 {
 }
 
 .ch-white{
-	color: white
+	color: white;
 }
 
 .ch-blue{
-	color:#115f86
+	color: #1b7eca;
+	/*	color: #5347dd;*/
+	/*	color:#115f86;*/
 }
-/*お悩み*/
-.onayami {
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #d1cece;
+
+.ch-green{
+	/*color:#00a98f;*/
+	color:#21EDBA;
+
 }
+
+.bg-white {
+	background-color: #fff;
+}
+
+.bg-gray {
+	background-color: #c6c6c6;
+}
+
+
+.bg-green {
+/*	background-color: #00a98f;*/ /*落ち着いてシックな緑*/
+	background-color: #21EDBA; /*さわやかでポップな緑*/
+}
+
 
 .title {
 	font-family: Arial, sans-serif;
@@ -290,6 +342,38 @@ header h1 {
 	text-align: center;
 	margin: 10px;
 	font-weight: bold;
+}
+
+
+.cautionary-section p{
+	text-align: center;
+	margin: 0;
+}
+
+/*
+.about-section{
+	line-height: 1.4px;
+	position: relative;
+	text-align: center;		
+	margin: 0 0 2rem;		
+}
+
+.about-section span{
+	color:#115f86;
+	font-size: xx-large;
+	font-weight:bold; 
+}
+
+.about-section h2{
+	font-size: x-large;	
+}
+*/
+
+/*お悩み
+.onayami {
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #d1cece;
 }
 
 .problems {
@@ -317,6 +401,7 @@ header h1 {
 	font-size: 1em;
 	text-align: center;
 }
+*/
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
@@ -325,22 +410,34 @@ header h1 {
         text-align: center;
     }
 
+	.hero-section:nth-child(even){
+		flex-direction: column-reverse;
+	}
     .text-content, .image-content {
         padding: 10px;
     }
 
     .text-content h1 {
         font-size: 28px;
+		display: inline-block;
+    }
+
+	.text-content h2 {
+        font-size: 16px;
+		white-space: pre-wrap; /* 改行を保持し、必要に応じて改行 */
     }
 
     .text-content p {
-        font-size: 16px;
+        font-size: 12px;
+		margin: 0;
     }
 
     .cta-button {
-        font-size: 16px;
-        padding: 10px 20px;
+		width: 100px;
+		font-size: 12px;
+        padding: 5px 5px;
     }
+	/*
 	.problems {
 		flex-direction: column;
 		align-items: center;
@@ -348,7 +445,21 @@ header h1 {
 	.problem {
 		width: 80%;
 	}
+	*/
+	.about-content p{
+		font-size: 14px;
+		text-align: left;
+	}
+	.store-links {
+		flex-direction: column; /* 縦に並べる */
+	}
+	
+	.store-links img {
+		height: 50px;
+		width: 100px; /* 画像の幅を縮小 */
+	}
 }
+
 
 
 
